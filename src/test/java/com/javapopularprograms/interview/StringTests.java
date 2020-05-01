@@ -30,11 +30,15 @@ class StringTests {
 	@Autowired
 	Anagram anagram;
 
+	@Autowired
+	CountCharacterOccurrences countCharacterOccurrences;
+
 
 	@Test
 	void contextLoads() {
 	}
 
+	//1) How to reverse a string in java?
 	@Test
 	public void reverseAString(){
 		String input = "hola me llamo freddy";
@@ -45,6 +49,7 @@ class StringTests {
 		assertEquals("ydderf omall em aloh",output);
 	}
 
+	//2) How to create a pyramid of numbers in java?
 	@Test
 	public void createAPyramid(){
 		int numberOfRows = 5;
@@ -52,6 +57,7 @@ class StringTests {
 
 	}
 
+	//3) How do you remove all white spaces from a string in java?
 	@Test
 	public void removingWhiteSpaces(){
 		String input = "hola me llamo freddy";
@@ -62,11 +68,13 @@ class StringTests {
 		assertEquals("holamellamofreddy",output);
 	}
 
+	//4) How to find duplicate characters in a string in java?
 	@Test
 	public void findDuplicates() {
 		findDuplicates.run("bitter butter");
 	}
 
+	//6) Anagram program in java
 	@Test
 	void isAnagram() {
 		String s1 = "Mother In Law";
@@ -74,6 +82,13 @@ class StringTests {
 
 		boolean result = anagram.run(s1,s2);
 		assertTrue(result);
+	}
+
+	//12) How to count occurrences of each character in a string in java?
+	@Test
+	void countOccurrences(){
+		String input = "Java J2EE Java JSP J2EE";
+		countCharacterOccurrences.run(input);
 	}
 
 }

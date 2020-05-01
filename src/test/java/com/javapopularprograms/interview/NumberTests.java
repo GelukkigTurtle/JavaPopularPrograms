@@ -2,11 +2,14 @@ package com.javapopularprograms.interview;
 
 import com.javapopularprograms.interview.arrays.FindDuplicatesInArray;
 import com.javapopularprograms.interview.numbers.ArmstrongNumber;
+import com.javapopularprograms.interview.numbers.LargestNumberLessGivenDigit;
+import com.javapopularprograms.interview.numbers.SumAllDigits;
 import com.javapopularprograms.interview.strings.FindDuplicates;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
@@ -20,8 +23,12 @@ public class NumberTests {
     ArmstrongNumber armstrongNumber;
 
     @Autowired
-    FindDuplicatesInArray findDuplicatesInArray;
+    SumAllDigits sumAllDigits;
 
+    @Autowired
+    LargestNumberLessGivenDigit largestNumberLessGivenDigit;
+
+    //7) Armstrong number program in java
     @Test
     void checkIfIsArmstrongNumber(){
         int number = 153;
@@ -30,9 +37,23 @@ public class NumberTests {
         assertTrue(armstrongNumber.run(number));
     }
 
+
+    //9) How to find sum of all digits of a number in java?
     @Test
-    void checkIfHaveDuplicates(){
-        int[] input = new int[]{1,2,3,4,5,6,7,4,5};
-        assertTrue(findDuplicatesInArray.run(input));
+    void sumAllDigitsOfNumber(){
+        int number = 12345;
+
+        assertEquals(15, sumAllDigits.run(number));
     }
+
+ //13) How to find largest number less than a given number and without a given digit?
+    @Test
+    void findLargestNumberLessThanDigit(){
+        int number = 145;
+        int digit  = 4;
+
+        assertEquals(139,largestNumberLessGivenDigit.run(number,digit));
+    }
+
+
 }
