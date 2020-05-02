@@ -33,6 +33,12 @@ class StringTests {
 	@Autowired
 	CountCharacterOccurrences countCharacterOccurrences;
 
+	@Autowired
+	ISStringRotation isStringRotation;
+
+	@Autowired
+	ReverseEachWord reverseEachWord;
+
 
 	@Test
 	void contextLoads() {
@@ -89,6 +95,23 @@ class StringTests {
 	void countOccurrences(){
 		String input = "Java J2EE Java JSP J2EE";
 		countCharacterOccurrences.run(input);
+	}
+
+	//18) How to check whether one string is a rotation of another in java?
+	@Test
+	void checkIfisStringRotated(){
+		String s1 = "JavaJ2eeStrutsHibernate";
+		String s2 = "StrutsHibernateJavaJ2ee";
+
+		assertTrue(isStringRotation.run(s1,s2));
+	}
+
+	//22) How to reverse each word of a string in java?
+	@Test
+	void reverseText(){
+		String text = "Java Concept Of The Day";
+
+		assertEquals("avaJ tpecnoC fO ehT yaD ", reverseEachWord.run(text));
 	}
 
 }
